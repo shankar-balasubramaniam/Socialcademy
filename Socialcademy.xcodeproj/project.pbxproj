@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		901F35FD2D5DF09F00DB7110 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 901F35FC2D5DF09F00DB7110 /* FirebaseAnalytics */; };
+		901F35FF2D5DF09F00DB7110 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 901F35FE2D5DF09F00DB7110 /* FirebaseFirestore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		901F35E92D5DEEDF00DB7110 /* Socialcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Socialcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +28,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				901F35FD2D5DF09F00DB7110 /* FirebaseAnalytics in Frameworks */,
+				901F35FF2D5DF09F00DB7110 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +72,8 @@
 			);
 			name = Socialcademy;
 			packageProductDependencies = (
+				901F35FC2D5DF09F00DB7110 /* FirebaseAnalytics */,
+				901F35FE2D5DF09F00DB7110 /* FirebaseFirestore */,
 			);
 			productName = Socialcademy;
 			productReference = 901F35E92D5DEEDF00DB7110 /* Socialcademy.app */;
@@ -94,6 +103,9 @@
 			);
 			mainGroup = 901F35E02D5DEEDF00DB7110;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				901F35FB2D5DF09F00DB7110 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 901F35EA2D5DEEDF00DB7110 /* Products */;
 			projectDirPath = "";
@@ -247,7 +259,7 @@
 				CODE_SIGN_ENTITLEMENTS = Socialcademy/Socialcademy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Socialcademy/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "Socialcademy/Resources/Preview\\ Content";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -284,7 +296,7 @@
 				CODE_SIGN_ENTITLEMENTS = Socialcademy/Socialcademy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Socialcademy/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "Socialcademy/Resources/Preview\\ Content";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -335,6 +347,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		901F35FB2D5DF09F00DB7110 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		901F35FC2D5DF09F00DB7110 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 901F35FB2D5DF09F00DB7110 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		901F35FE2D5DF09F00DB7110 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 901F35FB2D5DF09F00DB7110 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 901F35E12D5DEEDF00DB7110 /* Project object */;
 }
