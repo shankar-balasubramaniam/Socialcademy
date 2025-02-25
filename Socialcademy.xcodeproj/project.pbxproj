@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		901F35FD2D5DF09F00DB7110 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 901F35FC2D5DF09F00DB7110 /* FirebaseAnalytics */; };
 		901F35FF2D5DF09F00DB7110 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 901F35FE2D5DF09F00DB7110 /* FirebaseFirestore */; };
+		90C2F93B2D6B699300C3444D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 90C2F93A2D6B699300C3444D /* FirebaseAuth */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				901F35FD2D5DF09F00DB7110 /* FirebaseAnalytics in Frameworks */,
+				90C2F93B2D6B699300C3444D /* FirebaseAuth in Frameworks */,
 				901F35FF2D5DF09F00DB7110 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -40,6 +42,7 @@
 			isa = PBXGroup;
 			children = (
 				901F35EB2D5DEEDF00DB7110 /* Socialcademy */,
+				90C2F9392D6B699300C3444D /* Frameworks */,
 				901F35EA2D5DEEDF00DB7110 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +53,13 @@
 				901F35E92D5DEEDF00DB7110 /* Socialcademy.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		90C2F9392D6B699300C3444D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +84,7 @@
 			packageProductDependencies = (
 				901F35FC2D5DF09F00DB7110 /* FirebaseAnalytics */,
 				901F35FE2D5DF09F00DB7110 /* FirebaseFirestore */,
+				90C2F93A2D6B699300C3444D /* FirebaseAuth */,
 			);
 			productName = Socialcademy;
 			productReference = 901F35E92D5DEEDF00DB7110 /* Socialcademy.app */;
@@ -369,6 +380,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 901F35FB2D5DF09F00DB7110 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		90C2F93A2D6B699300C3444D /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 901F35FB2D5DF09F00DB7110 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
