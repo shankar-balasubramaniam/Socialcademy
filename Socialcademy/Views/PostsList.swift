@@ -11,22 +11,22 @@ struct PostsList: View {
     @State private var searchText: String = ""
     @State private var showNewPostForm = false
     
-    @StateObject var viewModel = PostsViewModel()
+    @StateObject var viewModel: PostsViewModel
     
     var body: some View {
-        NavigationView {
-            Group {
-                switch viewModel.posts {
-                case .loading:
-                    ProgressView()
-                case .error(let error):
-                    EmptyListView(title: "Cannot Load Posts", message: error.localizedDescription) {
-                        viewModel.fetchPosts()
-                    }
-                case .empty:
-                    EmptyListView(title: "No Posts", message: "There aren't any posts yet.")
-                case .loaded(let posts):
-                    List(posts) { post in
+        Group {
+            switch viewModel.posts {
+            case .loading:
+                ProgressView()
+            case .error(let error):
+                EmptyListView(title: "Cannot Load Posts", message: error.localizedDescription) {
+                    viewModel.fetchPosts()
+                }
+            case .empty:
+                EmptyListView(title: "No Posts", message: "There aren't any posts yet.")
+            case .loaded(let posts):
+                ScrollView {
+                    ForEach(posts) { post in
                         if searchText.isEmpty || post.contains(searchText) {
                             PostRow(viewModel: viewModel.makePostRowViewModel(for: post))
                         }
@@ -35,17 +35,17 @@ struct PostsList: View {
                     .searchable(text: $searchText)
                 }
             }
-            .navigationTitle(viewModel.title)
-            .toolbar {
-                Button {
-                    showNewPostForm = true
-                } label: {
-                    Label("New Post", systemImage: "square.and.pencil")
-                }
+        }
+        .navigationTitle(viewModel.title)
+        .toolbar {
+            Button {
+                showNewPostForm = true
+            } label: {
+                Label("New Post", systemImage: "square.and.pencil")
             }
-            .sheet(isPresented: $showNewPostForm) {
-                NewPostForm(createAction: viewModel.makeCreateAction())
-            }
+        }
+        .sheet(isPresented: $showNewPostForm) {
+            NewPostForm(viewModel: viewModel.makeNewPostViewModel())
         }
         .onAppear {
             viewModel.fetchPosts()
@@ -60,7 +60,9 @@ private struct ListPreview: View {
     var body: some View {
         let postsRepository = PostsRepositoryStub(state: state)
         let viewModel = PostsViewModel(postsRepository: postsRepository)
-        PostsList(viewModel: viewModel)
+        NavigationView {
+            PostsList(viewModel: viewModel)
+        }
     }
 }
 #Preview {
